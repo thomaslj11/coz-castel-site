@@ -28,15 +28,15 @@ export default async function handler(req, res) {
         const sender = process.env.CONTACT_EMAIL_FROM || 'contact@cozcastel.com';
 
         const { data, error } = await resend.emails.send({
-            from: `Coz Castel Website <${sender}>`,
+            from: `Coz Castel - Contact <${sender}>`,
             to: recipients,
             reply_to: email,
             subject: `COZ CASTEL - Message de ${name}`,
             html: `
-        <h1>Nouveau message du site web COZ CASTEL</h1>
-        <p><strong>De:</strong> ${name} (${email})</p>
-        <hr />
-        <p>${message.replace(/\n/g, '<br>')}</p>
+        <h2>Nouveau message - Contact COZ CASTEL</h2>
+        <p><strong>Nom :</strong> ${name}</p>
+        <p><strong>Email :</strong> ${email}</p>
+        <p><strong>Message :</strong> ${message.replace(/\n/g, '<br>')}</p>
       `,
         });
 
