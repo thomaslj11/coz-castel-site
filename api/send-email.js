@@ -34,9 +34,11 @@ export default async function handler(req, res) {
             subject: `COZ CASTEL - Message de ${name}`,
             html: `
         <h2>Nouveau message - Contact COZ CASTEL</h2>
+        <hr />
         <p><strong>Nom :</strong> ${name}</p>
         <p><strong>Email :</strong> ${email}</p>
-        <p><strong>Message :</strong> ${message.replace(/\n/g, '<br>')}</p>
+        <p><strong>Message :</strong></p>
+        <p>${message.replace(/\n/g, '<br>')}</p>
       `,
         });
 
