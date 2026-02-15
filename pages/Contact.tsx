@@ -12,6 +12,12 @@ const Contact: React.FC = () => {
   });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
+  React.useEffect(() => {
+    if (status === 'success') {
+      window.scrollTo(0, 0);
+    }
+  }, [status]);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
