@@ -6,11 +6,11 @@ const Histoire: React.FC = () => {
   const [selectedIndex, setSelectedIndex] = React.useState<number | null>(null);
 
   const galerie = [
-    { src: "/images/Coz-castel-premiere-maison.webp", alt: "coz-castel-premiere-maison" },
+    { src: "/images/coz-castel-premiere-maison.webp", alt: "coz-castel-premiere-maison" },
     { src: "/images/coz-castel-debut-XXe.webp", alt: "coz-castel-debut-XXe" },
     { src: "/images/coz-castel-1970.webp", alt: "coz-castel-1970" },
     { src: "/images/coz-castel-1990.webp", alt: "coz-castel-1990" },
-    { src: "/images/Coz Castel marée haute HD-bretagne-location.webp", alt: "Coz Castel aujourd'hui" },
+    { src: "/images/coz-castel-maree-haute-hd-bretagne-location.webp", alt: "Coz Castel aujourd'hui" },
   ];
 
   const openLightbox = (index: number) => setSelectedIndex(index);
