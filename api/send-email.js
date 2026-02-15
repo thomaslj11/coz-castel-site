@@ -31,9 +31,9 @@ export default async function handler(req, res) {
             from: `Coz Castel Website <${sender}>`,
             to: recipients,
             reply_to: email,
-            subject: `Nouveau message de ${name}`,
+            subject: `COZ CASTEL - Message de ${name}`,
             html: `
-        <h1>Nouveau message du site web</h1>
+        <h1>Nouveau message du site web COZ CASTEL</h1>
         <p><strong>De:</strong> ${name} (${email})</p>
         <hr />
         <p>${message.replace(/\n/g, '<br>')}</p>
