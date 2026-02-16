@@ -41,7 +41,7 @@ const Home: React.FC = () => {
         title="Coz Castel"
         subtitle="Une île en Bretagne. location Bretagne"
         image="/images/Coz-castel-bretagne-location-ile.jpg"
-        heightClass="h-[calc(80vh-165px)]"
+        heightClass="h-[calc(80vh-195px)]"
         hideContent={true}
         disableZoom={true}
       />

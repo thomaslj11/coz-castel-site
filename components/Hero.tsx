@@ -9,7 +9,7 @@ interface HeroProps {
   disableZoom?: boolean;
 }
 
-const Hero: React.FC<HeroProps> = ({ title, image, subtitle, heightClass = "h-[40vh] min-h-[300px]", hideContent = false, disableZoom = false }) => {
+const Hero: React.FC<HeroProps> = ({ title, image, subtitle, heightClass = "h-[calc(40vh-30px)] min-h-[270px]", hideContent = false, disableZoom = false }) => {
   return (
     <div className={`relative w-full ${heightClass} overflow-hidden flex items-center justify-center`}>
       <div className="absolute inset-0 z-0">

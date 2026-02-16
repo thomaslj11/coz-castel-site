@@ -84,7 +84,7 @@ const Contact: React.FC = () => {
           <div className="space-y-8 animate-fade-in">
             <h2 className="text-3xl font-display font-bold text-primary">Une question ?</h2>
             <p className="text-gray-600 text-lg">
-              Vous souhaitez en savoir plus sur les disponibilités ou l'organisation de votre séjour sur l'île de Coz Castel ? Écrivez nous.
+              Vous souhaitez en savoir plus sur les disponibilités ou l'organisation de votre séjour sur l'île de Coz Castel ? Écrivez nous via ce formulaire.
               <br />
               Une <Link to="/infos" className="underline hover:text-primary-dark">FAQ (foire aux questions)</Link> est aussi disponible.
             </p>
