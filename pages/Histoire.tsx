@@ -46,7 +46,7 @@ const Histoire: React.FC = () => {
       <Hero
         title="Histoire"
         subtitle="L'âme de Coz Castel"
-        image="/images/hero-histoire.png"
+        image="/images/hero-histoire.jpg"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
