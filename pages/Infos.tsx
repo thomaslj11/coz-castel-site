@@ -45,7 +45,7 @@ const Infos: React.FC = () => {
     { icon: 'wifi', title: 'Wifi', desc: 'Internet inclus' },
     { icon: 'directions_car', title: 'Parking', desc: 'Stationnement sur place' },
     { icon: 'groups', title: 'Capacité', desc: '10 personnes (5 chambres)' },
-    { icon: 'kitchen', title: 'Cuisine', desc: 'Tout équipée' },
+    { icon: 'kitchen', title: 'Cuisine', desc: 'Toute équipée' },
     { icon: 'pets', title: 'Animaux', desc: 'Bienvenus sous conditions' },
     { icon: 'thermostat', title: 'Chauffage', desc: 'Chauffage central' },
     { icon: 'local_laundry_service', title: 'Buanderie', desc: 'Lave-linge' },
@@ -53,13 +53,13 @@ const Infos: React.FC = () => {
   ];
 
   const faqs = [
-    { q: "Comment accède-t-on à l'île ?", a: "L'île est accessible en voiture la majorité de la journée. À marée haute, l'île est entourée pendant environ 2 à 4 heures selon le coefficient. Une barque à rame est disponible si vous devez quitter l'île pendant la marée haute. " },
+    { q: "Comment accède-t-on à l'île ?", a: "L'île est accessible en voiture la majorité de la journée. À marée haute, l'île est entourée pendant environ 2 à 4 heures selon le coefficient. Une barque à rames est disponible si vous devez quitter l'île pendant la marée haute. " },
     { q: "Est-il possible de stationner sur Coz Castel ?", a: "oui. Plusieurs voitures peuvent stationner sur Coz Castel." },
     { q: "Les draps sont-ils fournis avec la location ?", a: "Vous devez apporter vos propres draps et serviettes. Sinon, vous pouvez aussi louer le linge de maison sur demande (voir la page des tarifs)." },
-    { q: "Le ménage est-il inclus dans la location ?", a: "Non. Vous pouvez faire appel à un service de ménage. Des frais de 150 € s’appliquent. La maison doit être restitué dans l’état de propreté dans lequel vous l’avez trouvée afin de garantir une hygiène parfaite à chaque locataire." },
+    { q: "Le ménage est-il inclus dans la location ?", a: "Non. Vous pouvez faire appel à un service de ménage. Des frais de 150 € s’appliquent. La maison doit être restituée dans l’état de propreté dans lequel vous l’avez trouvée afin de garantir une hygiène parfaite à chaque locataire." },
     { q: "Peut-on venir avec son chien ?", a: "Oui, les animaux sont les bienvenus sous conditions. Merci de nous contacter pour plus d’informations." },
-    { q: "Y a-t-il des commerces à proximité?", a: "Oui. À Penvenan, à 10 minutes en voiture, vous trouverez tous les services et commerce : boulangerie, supérette, marché Hypermarché..." },
-    { q: "Comment fonctionnent les marées ?", a: "Coz Castel est accessible en voiture u à pied la majorité du temps. Elle est entourée à marée haute. Pour calculer les heures de passage en voiture vers le continent ou l’île, il faut consulter l’heure de la pleine mer et ajouter ou retirer environ 1h30 à 2h à cette heure (ex : avec un coefficient de 90, si la pleine mer est à 18h, on peut passer en voiture avant 16h et à partir de 20h). Jusqu’à un coefficient de 55, l’île n’est pas totalement entourée (période de “mortes eaux”) et le passage en voiture est possible toute la journée. Pour connaître les horaires et les coefficients consultez https://maree.info/" },
+    { q: "Y a-t-il des commerces à proximité?", a: "Oui. À Penvenan, à 10 minutes en voiture, vous trouverez tous les services et commerce : boulangerie, supérette, Hypermarché, marché (samedi matin)..." },
+    { q: "Comment fonctionnent les marées ?", a: "Coz Castel est accessible en voiture ou à pied la majorité du temps. Elle est entourée à marée haute. Pour calculer les heures de passage en voiture vers le continent ou l’île, il faut consulter l’heure de la pleine mer et ajouter ou retirer environ 1h30 à 2h à cette heure (ex : avec un coefficient de 90, si la pleine mer est à 18h, on peut passer en voiture avant 16h et à partir de 20h). Jusqu’à un coefficient de 55, l’île n’est pas totalement entourée (période de “mortes eaux”) et le passage en voiture est possible toute la journée. Pour connaître les horaires et les coefficients consultez https://maree.info/" },
     { q: "Faut-il verser un dépôt de garantie ?", a: "Oui, il y a un dépôt de garantie de 600 euros pour toutes les locations. Celui-ci est restitué à la fin de la location si l’inventaire ne révèle pas de problème." },
     { q: "Est-il possible d’installer des tentes sur le terrain pour accueillir plus de monde pendant la location ?", a: "Non, il n’est pas possible d’installer des tentes sur le terrain pour accueillir plus de monde pendant la location." },
     { q: "Est-il possible de faire des barbecues sur Coz Castel ?", a: "NON 🚫 Les barbecues sont interdits sur Coz Castel. C’est un règlement pour toute la côte du fait des risques d’incendies." },
