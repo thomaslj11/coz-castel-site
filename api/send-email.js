@@ -44,8 +44,8 @@ export default async function handler(req, res) {
         });
 
         if (error) {
-            console.error('Resend error:', error);
-            return res.status(400).json({ error });
+            console.error('Resend API error:', JSON.stringify(error, null, 2));
+            return res.status(400).json({ error: error.message || 'Error from Resend API' });
         }
 
         return res.status(200).json({ message: 'Email sent successfully' });

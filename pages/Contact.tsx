@@ -36,10 +36,17 @@ const Contact: React.FC = () => {
     try {
       const response = await fetch('/api/send-email', {
         method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify(formData),
       });
 
-      if (!response.ok) throw new Error('Network response was not ok');
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Network response was not ok');
+      }
 
       setStatus('success');
       setFormData({ name: '', email: '', message: '', honeypot: '' });
@@ -176,6 +183,16 @@ const Contact: React.FC = () => {
               >
                 {status === 'submitting' ? 'Envoi en cours...' : 'Envoyer le message'}
               </button>
+
+              {status === 'error' && (
+                <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm animate-shake">
+                  <div className="flex items-center gap-2">
+                    <span className="material-icons text-lg">error_outline</span>
+                    <p className="font-bold">Une erreur est survenue lors de l'envoi.</p>
+                  </div>
+                  <p className="mt-1">Veuillez vérifier vos informations ou réessayer plus tard.</p>
+                </div>
+              )}
             </form>
           </div>
 
