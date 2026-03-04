@@ -11,6 +11,7 @@ const Contact: React.FC = () => {
     honeypot: '', // Honeypot field
   });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState<string>('');
 
   React.useEffect(() => {
     if (status === 'success') {
@@ -50,9 +51,11 @@ const Contact: React.FC = () => {
 
       setStatus('success');
       setFormData({ name: '', email: '', message: '', honeypot: '' });
-    } catch (error) {
+      setErrorMessage('');
+    } catch (error: any) {
       console.error('Submission error:', error);
       setStatus('error');
+      setErrorMessage(error.message || 'Une erreur inconnue est survenue.');
     }
   };
 
@@ -190,7 +193,7 @@ const Contact: React.FC = () => {
                     <span className="material-icons text-lg">error_outline</span>
                     <p className="font-bold">Une erreur est survenue lors de l'envoi.</p>
                   </div>
-                  <p className="mt-1">Veuillez vérifier vos informations ou réessayer plus tard.</p>
+                  <p className="mt-1">{errorMessage}</p>
                 </div>
               )}
             </form>

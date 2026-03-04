@@ -21,10 +21,20 @@ export default async function handler(req, res) {
             return res.status(400).json({ error: 'Missing required fields' });
         }
 
-        // Get configuration from environment variables
-        const recipients = process.env.CONTACT_EMAIL_TO
-            ? process.env.CONTACT_EMAIL_TO.split(',').map(e => e.trim())
-            : ['owner@cozcastel.com']; // Fallback
+        if (!process.env.RESEND_API_KEY || process.env.RESEND_API_KEY === 're_123456789') {
+            return res.status(500).json({ error: 'La clé API Resend n\'est pas configurée correctement sur le serveur.' });
+        }
+
+        // Get configuration from environment variables (checking both new and legacy names)
+        let recipients = [];
+        if (process.env.CONTACT_EMAIL_TO) {
+            recipients = process.env.CONTACT_EMAIL_TO.split(',').map(e => e.trim());
+        } else if (process.env.RECIPIENT_EMAIL_1) {
+            recipients = [process.env.RECIPIENT_EMAIL_1];
+            if (process.env.RECIPIENT_EMAIL_2) recipients.push(process.env.RECIPIENT_EMAIL_2);
+        } else {
+            recipients = ['owner@cozcastel.com']; // Fallback
+        }
 
         const sender = process.env.CONTACT_EMAIL_FROM || 'contact@cozcastel.com';
 
