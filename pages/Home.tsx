@@ -14,13 +14,15 @@ const Home: React.FC = () => {
             {
               "@context": "https://schema.org",
               "@type": "VacationRental",
-              "name": "Coz Castel",
-              "description": "Une île privée à louer en Bretagne sur la Côte de Granit Rose.",
-              "image": "https://cozcastel.fr/images/Coz-castel-bretagne-location-ile.jpg",
+              "name": "Coz Castel - Location d'une île privée en Bretagne",
+              "description": "Louez une île privée en Bretagne. Coz Castel peut accueillir jusqu'à 10 personnes dnas un cadre magique et calme. Réservez sur notre site dès maintenant !",
+              "image": [
+                "https://cozcastel.fr/images/rich-snippet-coz-castel.jpg"
+              ],
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Île de Coz Castel",
-                "addressLocality": "Penvénan",
+                "addressLocality": "Penvenan",
                 "postalCode": "22710",
                 "addressRegion": "Bretagne",
                 "addressCountry": "FR"
@@ -29,6 +31,10 @@ const Home: React.FC = () => {
                 "@type": "GeoCoordinates",
                 "latitude": "48.8413",
                 "longitude": "-3.2913"
+              },
+              "starRating": {
+                "@type": "Rating",
+                "ratingValue": "5"
               },
               "url": "https://cozcastel.fr",
               "telephone": "+33123456789",

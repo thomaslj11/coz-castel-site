@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
-import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Photos from './pages/Photos';
@@ -34,7 +34,7 @@ const PageTracker = () => {
 const App: React.FC = () => {
   return (
     <HelmetProvider>
-      <HashRouter>
+      <BrowserRouter>
         <ScrollToTop />
         <PageTracker />
         <Routes>
@@ -47,7 +47,7 @@ const App: React.FC = () => {
             <Route path="contact" element={<Contact />} />
           </Route>
         </Routes>
-      </HashRouter>
+      </BrowserRouter>
     </HelmetProvider>
   );
 };

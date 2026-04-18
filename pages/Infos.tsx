@@ -73,15 +73,32 @@ const Infos: React.FC = () => {
           <a href="http://www.bretagne-cotedegranitrose.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Office de tourisme de la côte de granit rose</a>,{' '}
           <a href="https://www.france-voyage.com/guide/cotes-d-armor-departement.htm" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">France voyage côtes d’Armor</a>
         </>
-      )
+      ),
+      schemaAnswer: "Tourisme Bretagne (https://www.tourismebretagne.com/), Office de tourisme de la côte de granit rose (http://www.bretagne-cotedegranitrose.com/), France voyage côtes d’Armor (https://www.france-voyage.com/guide/cotes-d-armor-departement.htm)"
     },
   ];
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.schemaAnswer || (typeof faq.a === 'string' ? faq.a : '')
+      }
+    }))
+  };
 
   return (
     <>
       <Helmet>
         <title>Infos Pratiques & FAQ - Coz Castel - Une île à louer en Bretagne</title>
         <meta name="description" content="Tout savoir pour préparer votre séjour à Coz Castel : accès, équipements, horaires et questions fréquentes." />
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
       </Helmet>
       <Hero
         title="Infos Pratiques"

@@ -6,6 +6,8 @@ import Hero from '../components/Hero';
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
+    arrivee: '',
+    depart: '',
     email: '',
     message: '',
     honeypot: '', // Honeypot field
@@ -50,7 +52,7 @@ const Contact: React.FC = () => {
       }
 
       setStatus('success');
-      setFormData({ name: '', email: '', message: '', honeypot: '' });
+      setFormData({ name: '', arrivee: '', depart: '', email: '', message: '', honeypot: '' });
       setErrorMessage('');
     } catch (error: any) {
       console.error('Submission error:', error);
@@ -149,6 +151,33 @@ const Contact: React.FC = () => {
                   placeholder="Votre nom"
                   className="block w-full rounded-lg border-gray-300 bg-white shadow-sm focus:border-primary focus:ring-primary py-3 px-4"
                 />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="arrivee" className="block text-sm font-bold text-primary mb-2">Arrivée</label>
+                  <input
+                    type="date"
+                    id="arrivee"
+                    name="arrivee"
+                    required
+                    value={formData.arrivee}
+                    onChange={handleChange}
+                    className={`block w-full rounded-lg border-gray-300 bg-white shadow-sm focus:border-primary focus:ring-primary py-3 px-4 ${!formData.arrivee ? 'text-gray-400' : 'text-gray-900'}`}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="depart" className="block text-sm font-bold text-primary mb-2">Départ</label>
+                  <input
+                    type="date"
+                    id="depart"
+                    name="depart"
+                    required
+                    value={formData.depart}
+                    onChange={handleChange}
+                    className={`block w-full rounded-lg border-gray-300 bg-white shadow-sm focus:border-primary focus:ring-primary py-3 px-4 ${!formData.depart ? 'text-gray-400' : 'text-gray-900'}`}
+                  />
+                </div>
               </div>
 
               <div>

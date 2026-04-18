@@ -16,6 +16,7 @@ const Hero: React.FC<HeroProps> = ({ title, image, subtitle, heightClass = "h-[c
         <img
           src={image}
           alt={title}
+          fetchpriority="high"
           className={`w-full h-full object-cover ${!disableZoom ? 'transition-transform duration-1000 hover:scale-105' : ''}`}
         />
         {!hideContent && <div className="absolute inset-0 bg-primary/40 backdrop-blur-[1px]"></div>}
