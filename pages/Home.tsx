@@ -15,7 +15,7 @@ const Home: React.FC = () => {
               "@context": "https://schema.org",
               "@type": "VacationRental",
               "name": "Coz Castel - Location d'une île privée en Bretagne",
-              "description": "Louez une île privée en Bretagne. Coz Castel peut accueillir jusqu'à 10 personnes dnas un cadre magique et calme. Réservez sur notre site dès maintenant !",
+              "description": "Louez une île privée en Bretagne. Découvrez Coz Castel, une maison de vacances sur une île privée en Bretagne sur la Côte de Granit Rose. Vacances uniques en famille ou entre amis.",
               "image": [
                 "https://cozcastel.fr/images/rich-snippet-coz-castel.jpg"
               ],
@@ -37,8 +37,15 @@ const Home: React.FC = () => {
                 "ratingValue": "5"
               },
               "url": "https://cozcastel.fr",
-              "telephone": "+33123456789",
-              "priceRange": "$$$"
+              "identifier": "coz-castel-001",
+              "containsPlace": {
+                "@type": "Accommodation",
+                "name": "Maison Coz Castel",
+                "occupancy": {
+                  "@type": "QuantitativeValue",
+                  "value": 10
+                }
+              }
             }
           `}
         </script>
@@ -100,7 +107,7 @@ const Home: React.FC = () => {
             <div className="rounded-2xl overflow-hidden shadow-xl relative group h-64 md:h-80 w-full transform transition hover:scale-[1.02] duration-500 delay-100">
               <img
                 src="/images/maison-moulin-pommes-coz-castel-bretagne.jpg"
-                alt="Maison Coz Castel"
+                alt="Maison Coz Castel - location ile Bretagne"
                 className="w-full h-full object-cover"
               />
             </div>
