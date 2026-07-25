@@ -11,7 +11,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: 'Method Not Allowed' });
   }
 
-  const { name, email, message, honeypot } = req.body;
+  const { name, email, message, honeypot, arrivee, depart, adults, children } = req.body;
 
   // Security: Honeypot check
   if (honeypot) {
@@ -38,6 +38,10 @@ export default async function handler(req, res) {
         <h1>Nouveau contact via le site web</h1>
         <p><strong>Nom:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Date d'arrivée:</strong> ${arrivee}</p>
+        <p><strong>Date de départ:</strong> ${depart}</p>
+        <p><strong>Nombre d'adultes:</strong> ${adults || 'Non spécifié'}</p>
+        <p><strong>Nombre d'enfants (-18 ans):</strong> ${children !== undefined && children !== '' ? children : 'Non spécifié'}</p>
         <p><strong>Message:</strong></p>
         <blockquote style="background: #f9f9f9; padding: 15px; border-left: 4px solid #23408F;">
           ${message.replace(/\n/g, '<br>')}

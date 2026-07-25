@@ -8,6 +8,8 @@ const Contact: React.FC = () => {
     name: '',
     arrivee: '',
     depart: '',
+    adults: '',
+    children: '',
     email: '',
     message: '',
     honeypot: '', // Honeypot field
@@ -52,7 +54,7 @@ const Contact: React.FC = () => {
       }
 
       setStatus('success');
-      setFormData({ name: '', arrivee: '', depart: '', email: '', message: '', honeypot: '' });
+      setFormData({ name: '', arrivee: '', depart: '', adults: '', children: '', email: '', message: '', honeypot: '' });
       setErrorMessage('');
     } catch (error: any) {
       console.error('Submission error:', error);
@@ -176,6 +178,37 @@ const Contact: React.FC = () => {
                     value={formData.depart}
                     onChange={handleChange}
                     className={`block w-full rounded-lg border-gray-300 bg-white shadow-sm focus:border-primary focus:ring-primary py-3 px-4 ${!formData.depart ? 'text-gray-400' : 'text-gray-900'}`}
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="adults" className="block text-sm font-bold text-primary mb-2">Nombre d'adultes</label>
+                  <input
+                    type="number"
+                    id="adults"
+                    name="adults"
+                    min="1"
+                    required
+                    value={formData.adults}
+                    onChange={handleChange}
+                    placeholder="Ex: 2"
+                    className="block w-full rounded-lg border-gray-300 bg-white shadow-sm focus:border-primary focus:ring-primary py-3 px-4"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="children" className="block text-sm font-bold text-primary mb-2">Nombre d'enfants (-18 ans)</label>
+                  <input
+                    type="number"
+                    id="children"
+                    name="children"
+                    min="0"
+                    required
+                    value={formData.children}
+                    onChange={handleChange}
+                    placeholder="Ex: 0"
+                    className="block w-full rounded-lg border-gray-300 bg-white shadow-sm focus:border-primary focus:ring-primary py-3 px-4"
                   />
                 </div>
               </div>

@@ -9,7 +9,7 @@ export default async function handler(req, res) {
 
     try {
         const body = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
-        const { name, email, message, honeypot, arrivee, depart } = body;
+        const { name, email, message, honeypot, arrivee, depart, adults, children } = body;
 
         // Server-side Honeypot Check
         if (honeypot) {
@@ -50,6 +50,8 @@ export default async function handler(req, res) {
         <p><strong>Email :</strong> ${email}</p>
         <p><strong>Date d'arrivée :</strong> ${arrivee}</p>
         <p><strong>Date de départ :</strong> ${depart}</p>
+        <p><strong>Nombre d'adultes :</strong> ${adults || 'Non spécifié'}</p>
+        <p><strong>Nombre d'enfants (-18 ans) :</strong> ${children !== undefined && children !== '' ? children : 'Non spécifié'}</p>
         <p><strong>Message :</strong></p>
         <p>${message.replace(/\n/g, '<br>')}</p>
       `,
