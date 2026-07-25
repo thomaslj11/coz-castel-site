@@ -41,7 +41,7 @@ export default async function handler(req, res) {
         const { data, error } = await resend.emails.send({
             from: `Coz Castel - Contact <${sender}>`,
             to: recipients,
-            reply_to: email,
+            replyTo: name ? `${name} <${email}>` : email,
             subject: `COZ CASTEL - Message de ${name}`,
             html: `
         <h2>Nouveau message - Contact COZ CASTEL</h2>

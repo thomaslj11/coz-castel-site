@@ -32,7 +32,7 @@ export default async function handler(req, res) {
         process.env.RECIPIENT_EMAIL_1, // e.g., 'owner1@example.com'
         process.env.RECIPIENT_EMAIL_2  // e.g., 'owner2@example.com'
       ],
-      reply_to: email, // Allow direct reply to user
+      replyTo: name ? `${name} <${email}>` : email, // Allow direct reply to user
       subject: `Nouveau message de ${name} - Coz Castel`,
       html: `
         <h1>Nouveau contact via le site web</h1>
